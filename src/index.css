@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #0F172A;
+  --color-dark-surface: #1E293B;
+  --color-dark-border: #334155;
+  
+  --color-accent-blue: #3B82F6;
+  --color-accent-purple: #8B5CF6;
+  --color-accent-green: #10B981;
+  --color-accent-orange: #F59E0B;
+  --color-accent-red: #EF4444;
+
+  /* Mockup specific colors */
+  --color-mock-bg: #0B0F17;
+  --color-mock-panel: #131926;
+  --color-mock-panel2: #1A2233;
+  --color-mock-border: #232D42;
+  --color-mock-text: #E8ECF4;
+  --color-mock-text-dim: #8A93A8;
+  
+  --color-mock-accent: #4CD3A5;
+  --color-mock-accent-dim: #1E3B33;
+  
+  --color-mock-danger: #FF6B6B;
+  --color-mock-danger-dim: #3B2129;
+  
+  --color-mock-warn: #F5C05C;
+  --color-mock-warn-dim: #3A311A;
+  
+  --color-mock-grey: #5C6478;
+  --color-mock-grey-dim: #232A38;
+  
+  --color-mock-scope-browse: #6FB4FF;
+  --color-mock-scope-post: #C792EA;
+  --color-mock-scope-purchase: #FFB86C;
+
+  --font-inter: "Inter", sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@utility glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+@utility glass-dark {
+  @apply bg-[#1E293B]/70 backdrop-blur-xl border border-white/10 shadow-xl;
+}
+@utility text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r;
+}
+
+@layer base {
+  body {
+    @apply bg-mock-bg text-mock-text antialiased font-inter min-h-screen selection:bg-mock-accent/30 selection:text-white;
+  }
+}
+
+/* Hide scrollbar for clean UI but allow scrolling */
+@utility no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
